@@ -1,0 +1,14 @@
+<div class="task-filter" role="group" aria-label="Filter tasks">
+  @for (f of filters; track f.value) {
+    <button
+      class="filter-btn"
+      [class.active]="taskService.filter() === f.value"
+      (click)="setFilter(f.value)"
+    >
+      {{ f.label }}
+      <span class="count">
+        {{ taskService.counts()[f.value] }}
+      </span>
+    </button>
+  }
+</div>
