@@ -1,0 +1,82 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 40px 24px 24px;
+  text-align: center;
+}
+
+.header-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.app-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
+  margin-top: 2px;
+}
+
+.main {
+  flex: 1;
+  padding: 0 24px 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 28px;
+  width: 100%;
+  max-width: 640px;
+  height: fit-content;
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 28px 16px 20px;
+  }
+
+  .app-title {
+    font-size: 22px;
+  }
+
+  .main {
+    padding: 0 12px 32px;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+}

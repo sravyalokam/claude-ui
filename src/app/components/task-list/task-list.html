@@ -1,0 +1,28 @@
+<div class="task-list">
+  @if (taskService.filteredTasks().length === 0) {
+    <div class="empty-state">
+      @if (taskService.tasks().length === 0) {
+        <div class="empty-icon" aria-hidden="true">📋</div>
+        <p class="empty-title">No tasks yet</p>
+        <p class="empty-hint">Add your first task above to get started!</p>
+      } @else {
+        <div class="empty-icon" aria-hidden="true">🔍</div>
+        <p class="empty-title">No tasks match this filter</p>
+        <p class="empty-hint">Try switching to a different filter.</p>
+      }
+    </div>
+  } @else {
+    <ul class="list" role="list">
+      @for (task of taskService.filteredTasks(); track task.id) {
+        <li>
+          <app-task-item
+            [task]="task"
+            (toggled)="onToggle($event)"
+            (edited)="onEdit($event)"
+            (deleted)="onDelete($event)"
+          />
+        </li>
+      }
+    </ul>
+  }
+</div>
