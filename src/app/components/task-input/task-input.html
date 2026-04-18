@@ -1,0 +1,24 @@
+<div class="task-input">
+  <div class="input-wrapper">
+    <span class="input-icon" aria-hidden="true">✦</span>
+    <input
+      #taskInput
+      type="text"
+      class="input-field"
+      placeholder="Add a new task..."
+      [ngModel]="title()"
+      (ngModelChange)="title.set($event)"
+      (keydown)="onKeydown($event)"
+      maxlength="200"
+      aria-label="New task title"
+    />
+    <button
+      class="add-btn"
+      (click)="submit()"
+      [disabled]="!title().trim()"
+      aria-label="Add task"
+    >
+      Add
+    </button>
+  </div>
+</div>

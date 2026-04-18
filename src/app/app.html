@@ -1,0 +1,19 @@
+<div class="app-shell">
+  <header class="header">
+    <div class="header-content">
+      <div class="logo" aria-hidden="true">✓</div>
+      <div>
+        <h1 class="app-title">My Tasks</h1>
+        <p class="app-subtitle">Stay organized, stay productive</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="card">
+      <app-task-input (taskAdded)="addTask($event)" />
+      <app-task-filter />
+      <app-task-list />
+    </div>
+  </main>
+</div>
